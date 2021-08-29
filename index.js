@@ -34,6 +34,7 @@ var contactList = [
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views') );
 app.use(express.urlencoded());
+app.use(express.static('assets'));
 
 app.get('/', function(req, res){
     // console.log(__dirname);
@@ -54,20 +55,18 @@ app.get('/about', function(req, res){
 });
 
 app.post('/add-contact', function(req, res){
-    contactList.push({
-        person : req.body.person,
-        phone : req.body.phone,
-    });
+    // console.log(req);
+    // contactList.push({
+    //     person : req.body.person,
+    //     phone : req.body.phone,
+    // });
+    console.log(req.body);
+    contactList.push(req.body);
     res.redirect('/');
     // console.log(req.body);
     // return;
     // return res.send(.toString());
 })
-
-
-
-
-
 
 
 app.listen(port, function(err){
