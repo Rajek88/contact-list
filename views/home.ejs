@@ -4,30 +4,35 @@
         <title>
             <%= title %>
         </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-        <h1>Contact List</h1>
-        <div>
-            <ul>
+        <nav>
+            <h1><i class="fas fa-address-book"></i>&nbsp;Contact List</h1>
+            <form action="/add-contact" method="POST">
+                <input type="text" name="person" placeholder="Enter your name" required>
+                <input type="number" name="phone" placeholder="Enter your phone no." required>
+                <button type="submit">Add Contact</button>
+            </form>
+        </nav>
+        <div class="contacts">
+            <ul class="contact-list-holder">
                 <% for (let i of contact_list) { %> 
                     
-                    <li>
+                    <li class="contact-list">
                         <h3><%= i.person %></h3>
                         <p><%= i.phone %></p>
+                        <a class="del-btn" href="/delete/?phone=<%= i.phone %>">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
                     </li>
                 
                 <% }%>
             </ul>
         </div>
-
-        <form action="/add-contact" method="POST">
-            <input type="text" name="person" placeholder="Enter your name" required>
-            <input type="number" name="phone" placeholder="Enter your phone no." required>
-            <button type="submit">Add Contact</button>
-        </form>
     </body>
 </html>

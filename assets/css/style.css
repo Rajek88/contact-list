@@ -1,11 +1,63 @@
 body{
-    background-color: rgb(26, 25, 25);
+    background-color: rgb(36, 36, 36);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: coral;
+    color: rgb(201, 201, 201);
     font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    position: sticky;
+    top: 0%;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.contacts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-list-holder{
+    padding: 0%;
+    margin: 0%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-list{
+    padding: 0px 20px;
+    border-radius: 30px;
+    background-color: rgb(255, 149, 73);
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+}
+.contact-list:hover{
+    border-radius: 10px;
+    width: 100%;
+    background-color: teal;
+    color: aliceblue;
+    transition: all ease-in-out 0.5s;
+}
+
+.del-btn{
+    font-size: 20px;
+    color: tomato;
 }

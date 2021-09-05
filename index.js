@@ -46,6 +46,18 @@ app.get('/', function(req, res){
     });
 });
 
+
+app.get('/delete/', function(req, res){
+    console.log(req.query);
+    let phone = req.query.phone;
+
+    let contactIndex = contactList.findIndex( contact => contact.phone == phone);
+    contactList.splice(contactIndex, 1);
+
+    res.redirect('back');
+
+});
+
 app.get('/about', function(req, res){
     return res.render('about', {
         title : 'About Developer',
